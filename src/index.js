@@ -1,9 +1,31 @@
 import './sass/main.scss';
-import data from "./data/menu.json"
-import murkup from "./templates/markup.hbs"
+import dataMenu from "./data/menu.json"
+import menuMrpTemplate from "./templates/markup.hbs"
+const markup = menuMrpTemplate(dataMenu);
+
+const menuList = document.querySelector(".js-menu");
+const themeSwitch = document.querySelector("#theme-switch-toggle");
+const bodyBg = document.querySelector("body");
+
+const Theme = {
+  LIGHT: 'light-theme',
+  DARK: 'dark-theme',
+};
 
 
-const menuList = document.querySelector(".js-menu")
-console.log(menuList);
-console.log(data);
-// console.log(murkup);
+// console.log(Theme.DARK);
+// console.log(themeSwitch);
+// console.log(menuList);
+// console.log(dataMenu);
+// console.log(menuMrpTemplate);
+ 
+menuList.insertAdjacentHTML('beforeend', markup);
+
+themeSwitch.addEventListener("change", switcherBgColor);
+
+function switcherBgColor(e) {
+    e.preventDefault();
+    bodyBg.classList.toggle(`${Theme.DARK}`);
+
+ };
+
