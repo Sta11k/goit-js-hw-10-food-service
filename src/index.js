@@ -12,18 +12,7 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-
-// console.log(Theme.DARK);
-// console.log(themeSwitch);
-// console.log(menuList);
-// console.log(dataMenu);
-// console.log(menuMrpTemplate);
- 
 menuList.insertAdjacentHTML('beforeend', markup);
-
-
-
-
 
 const theme = localStorage.getItem(`${Theme.DARK}`);
 const storageAudit = JSON.parse(localStorage.getItem(`${Theme.DARK}`));
@@ -46,24 +35,16 @@ function switcherBgColor() {
    
 
 };
-
-
-
-
-
-console.log(theme);
-// const theme = localStorage.getItem(`${Theme.DARK}`);
-
-// function storageTheme() {
-//   if(storageAudit ++) 
-// // };
-
+ const check = themeSwitch.checked;
+console.log(check);
 
 
 //   const sliderSwitch = document.querySelector("#theme-switch-toggle");
   
 //   const body = document.querySelector("body");
   
+
+
 //   sliderSwitch.addEventListener("change", checkColor);
 //   sliderSwitch.addEventListener("change", inLocaLeStorage);
   
