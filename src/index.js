@@ -20,32 +20,35 @@ menuList.insertAdjacentHTML('beforeend', markup);
 // const storageAudit = JSON.parse(localStorage.getItem(`${Theme.DARK}`));
 
 themeSwitch.addEventListener("change", switcherBgColor);
-themeSwitch.addEventListener("change", checkBgColorLocStor);
+// themeSwitch.addEventListener("change", checkBgColorLocStor);
 
 
 
   function switcherBgColor() {
       const check = themeSwitch.checked;
       if (check) {
-    bodyBg.classList.add(Theme.DARK);
-    bodyBg.classList.remove(Theme.LIGHT);
+        bodyBg.classList.add(Theme.DARK);
+        bodyBg.classList.remove(Theme.LIGHT);
+          localStorage.setItem("theme", Theme.DARK);
      } else {
-    bodyBg.classList.add(Theme.LIGHT);
-    bodyBg.classList.remove(Theme.DARK);
+      bodyBg.classList.add(Theme.LIGHT);
+      bodyBg.classList.remove(Theme.DARK);
+          localStorage.removeItem("theme");
+          localStorage.setItem("theme", Theme.LIGHT);
      }
 
 }
 
-   function checkBgColorLocStor() {
-    const check = themeSwitch.checked;
-    // console.log(check);
-    if (check) {
-      localStorage.setItem("theme", Theme.DARK);
-    } else {
-      localStorage.removeItem("theme");
-      localStorage.setItem("theme", Theme.LIGHT);
-    }
-}
+//    function checkBgColorLocStor() {
+//     const check = themeSwitch.checked;
+//     // console.log(check);
+//     if (check) {
+//       localStorage.setItem("theme", Theme.DARK);
+//     } else {
+//       localStorage.removeItem("theme");
+//       localStorage.setItem("theme", Theme.LIGHT);
+//     }
+// }
 
   
 const replaceLocalTheme = localStorage.getItem("theme");
